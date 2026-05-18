@@ -537,18 +537,6 @@ html {
 }
 
 .hero__title {
-  text-align: left;
-}
-
-.hero__title--center {
-  text-align: center;
-}
-
-.hero__title--right {
-  text-align: right;
-}
-
-.hero__title h1 {
   color: var(--color-text-alt);
   font-variant-numeric: lining-nums proportional-nums;
   font-family: var(--font-display);
@@ -557,6 +545,19 @@ html {
   font-weight: var(--fw-regular);
   line-height: 110%;
   text-transform: uppercase;
+  text-align: left;
+}
+
+.hero__title-line {
+  display: block;
+}
+
+.hero__title-line--center {
+  text-align: center;
+}
+
+.hero__title-line--right {
+  text-align: right;
 }
 
 .hero__lead {
@@ -808,14 +809,26 @@ html {
   font-weight: var(--fw-bold);
 }
 
-.place__table {
+.place__details-list {
   width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin-bottom: 48px;
+  margin: 0 0 48px;
+  display: flex;
+  flex-direction: column;
 }
 
-.place__table td {
+.place__details-row {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  align-items: center;
+  border-bottom: 2px solid #d0d0d0;
+}
+
+.place__details-row:last-child {
+  border-bottom: none;
+}
+
+.place__details-key,
+.place__details-value {
   color: var(--color-text-alt);
   font-variant-numeric: lining-nums proportional-nums;
   font-family: var(--font-text);
@@ -823,30 +836,29 @@ html {
   font-style: normal;
   line-height: 120%;
   padding: 15px 0;
-  border-bottom: 2px solid #d0d0d0;
-  vertical-align: middle;
+  margin: 0;
 }
 
-.place__table td:first-child {
-  width: 45%;
+.place__details-key {
   padding-right: 16px;
   border-right: 2px solid #d0d0d0;
   color: var(--color-text-muted);
   font-weight: var(--fw-regular);
 }
 
-.place__table td:last-child {
+.place__details-value {
   padding-left: 16px;
   font-weight: var(--fw-semibold);
 }
 
-.place__table tr:first-child td {
+.place__details-row:first-child .place__details-key,
+.place__details-row:first-child .place__details-value {
   padding-top: 0;
 }
 
-.place__table tr:last-child td {
+.place__details-row:last-child .place__details-key,
+.place__details-row:last-child .place__details-value {
   padding-bottom: 0;
-  border-bottom: none;
 }
 
 .place__price-old {
@@ -881,46 +893,34 @@ html {
     margin-bottom: 44px;
   }
 
-  .place__table {
+  .place__details-list {
     margin-bottom: 40px;
-    table-layout: auto;
   }
 
-  .place__table tbody {
-    display: block;
-  }
-
-  .place__table tr {
+  .place__details-row {
     display: block;
     padding: 16px 0;
     border-bottom: 2px solid #d0d0d0;
   }
 
-  .place__table tr:first-child {
+  .place__details-row:first-child {
     padding-top: 0;
   }
 
-  .place__table tr:last-child {
+  .place__details-row:last-child {
     padding-bottom: 0;
     border-bottom: none;
   }
 
-  .place__table td {
-    display: inline-block;
-    width: auto;
+  .place__details-key,
+  .place__details-value {
+    display: inline;
     padding: 0;
     border: none;
-    vertical-align: baseline;
   }
 
-  .place__table td:first-child {
-    width: auto;
+  .place__details-key {
     padding-right: 8px;
-    border-right: none;
-  }
-
-  .place__table td:last-child {
-    padding-left: 0;
   }
 
   .place__footer {

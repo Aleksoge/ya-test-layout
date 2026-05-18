@@ -101,30 +101,34 @@ const setupMembers = () => {
     counterCurrent.textContent = String(index + 1);
   };
 
-  const finish = (dir) => {
-    index = (index + dir + total) % total;
-    renderCounter();
-    busy = false;
-  };
-
   const afterTransition = (cb) => {
-    track.addEventListener('transitionend', cb, { once: true });
+    let done = false;
+    const fire = () => {
+      if (done) return;
+      done = true;
+      cb();
+    };
+    track.addEventListener('transitionend', fire, { once: true });
+    setTimeout(fire, 800);
   };
 
   const advance = (dir) => {
     if (busy) return;
     busy = true;
 
+    index = (index + dir + total) % total;
+    renderCounter();
+
     if (reduceMotion.matches) {
       if (dir > 0) track.append(track.firstElementChild);
       else track.prepend(track.lastElementChild);
-      finish(dir);
+      busy = false;
       return;
     }
 
     const step = stepWidth(track);
     if (!step) {
-      finish(dir);
+      busy = false;
       return;
     }
 
@@ -136,7 +140,7 @@ const setupMembers = () => {
         track.style.transform = '';
         reflow(track);
         track.classList.remove('is-skipping');
-        finish(1);
+        busy = false;
       });
     } else {
       track.classList.add('is-skipping');
@@ -145,7 +149,9 @@ const setupMembers = () => {
       reflow(track);
       track.classList.remove('is-skipping');
       track.style.transform = '';
-      afterTransition(() => finish(-1));
+      afterTransition(() => {
+        busy = false;
+      });
     }
   };
 

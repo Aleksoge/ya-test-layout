@@ -42,11 +42,11 @@
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero__content">
-          <div class="hero__title">
-            <h1>Превратите<br>уездный город</h1>
-            <h1 class="hero__title--center">в столицу</h1>
-            <h1 class="hero__title--right">земного шара</h1>
-          </div>
+          <h1 class="hero__title">
+            <span class="hero__title-line">Превратите<br>уездный город</span>
+            <span class="hero__title-line hero__title-line--center">в столицу</span>
+            <span class="hero__title-line hero__title-line--right">земного шара</span>
+          </h1>
           <p class="hero__lead">Оплатите взнос на телеграммы для организации Международного васюкинского турнира
             по шахматам</p>
           <div class="hero__actions">
@@ -66,7 +66,7 @@
         <img class="hero__city" src="./assets/images/hero_city.png" alt="" fetchpriority="high">
       </div>
     </section>
-    <section class="marquee">
+    <aside class="marquee" aria-label="Цитаты из романа">
       <div class="marquee__track">
         <ul class="marquee__group">
           <li class="marquee__item">Дело помощи утопающим — дело рук самих утопающих!</li>
@@ -79,7 +79,7 @@
           <li class="marquee__item">Лёд тронулся, господа присяжные заседатели!</li>
         </ul>
       </div>
-    </section>
+    </aside>
     <section class="support" id="support">
       <div class="container">
         <div class="support__content">
@@ -105,30 +105,28 @@
               <span class="place__title-accent">одновременной игры в шахматы на 160 досках</span>
               гроссмейстера О. Бендера
             </h2>
-            <table class="place__table">
-              <tbody>
-                <tr>
-                  <td>Место проведения:</td>
-                  <td>Клуб «Картонажник»</td>
-                </tr>
-                <tr>
-                  <td>Дата и время мероприятия:</td>
-                  <td>22 июня 1927 г. в 18:00</td>
-                </tr>
-                <tr>
-                  <td>Стоимость входных билетов:</td>
-                  <td>20 коп.</td>
-                </tr>
-                <tr>
-                  <td>Плата за игру:</td>
-                  <td>50 коп.</td>
-                </tr>
-                <tr>
-                  <td>Взнос на телеграммы:</td>
-                  <td><s class="place__price-old">100 руб.</s> 21 руб. 16 коп.</td>
-                </tr>
-              </tbody>
-            </table>
+            <dl class="place__details-list">
+              <div class="place__details-row">
+                <dt class="place__details-key">Место проведения:</dt>
+                <dd class="place__details-value">Клуб «Картонажник»</dd>
+              </div>
+              <div class="place__details-row">
+                <dt class="place__details-key">Дата и время мероприятия:</dt>
+                <dd class="place__details-value">22 июня 1927 г. в 18:00</dd>
+              </div>
+              <div class="place__details-row">
+                <dt class="place__details-key">Стоимость входных билетов:</dt>
+                <dd class="place__details-value">20 коп.</dd>
+              </div>
+              <div class="place__details-row">
+                <dt class="place__details-key">Плата за игру:</dt>
+                <dd class="place__details-value">50 коп.</dd>
+              </div>
+              <div class="place__details-row">
+                <dt class="place__details-key">Взнос на телеграммы:</dt>
+                <dd class="place__details-value"><s class="place__price-old">100 руб.</s> 21 руб. 16 коп.</dd>
+              </div>
+            </dl>
             <p class="place__footer">
               По всем вопросам обращаться в администрацию к К. Михельсону
             </p>
@@ -231,7 +229,7 @@
               </div>
               <h3 class="members__name">Хозе-Рауль Капабланка</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
             <li class="members__item">
               <div class="members__photo">
@@ -239,7 +237,7 @@
               </div>
               <h3 class="members__name">Эммануил Ласкер</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
             <li class="members__item">
               <div class="members__photo">
@@ -247,7 +245,7 @@
               </div>
               <h3 class="members__name">Александр Алехин</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
             <li class="members__item">
               <div class="members__photo">
@@ -255,7 +253,7 @@
               </div>
               <h3 class="members__name">Макс Эйве</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
             <li class="members__item">
               <div class="members__photo">
@@ -263,7 +261,7 @@
               </div>
               <h3 class="members__name">Михаил Ботвинник</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
             <li class="members__item">
               <div class="members__photo">
@@ -271,13 +269,13 @@
               </div>
               <h3 class="members__name">Василий Смыслов</h3>
               <p class="members__caption">Чемпион мира по шахматам</p>
-              <a class="button button--pill members__cta" href="#">Подробнее</a>
+              <button class="button button--pill members__cta" type="button">Подробнее</button>
             </li>
           </ul>
         </div>
       </div>
     </section>
-    <section class="marquee">
+    <aside class="marquee" aria-label="Цитаты из романа">
       <div class="marquee__track">
         <ul class="marquee__group">
           <li class="marquee__item">Дело помощи утопающим — дело рук самих утопающих!</li>
@@ -290,7 +288,7 @@
           <li class="marquee__item">Лёд тронулся, господа присяжные заседатели!</li>
         </ul>
       </div>
-    </section>
+    </aside>
   </main>
 
   <footer class="page__footer footer">
